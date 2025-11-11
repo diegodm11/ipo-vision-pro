@@ -1,0 +1,41 @@
+
+:root{
+  --bg:#0e0f13;
+  --card:#151823;
+  --text:#e7e9f1;
+  --muted:#aab0c0;
+  --brand:#6ea8fe;
+  --accent:#8be9fd;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Ubuntu,Helvetica,Arial,sans-serif;line-height:1.6}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.container{max-width:1100px;margin:0 auto;padding:1.25rem}
+.site-header{position:sticky;top:0;background:rgba(14,15,19,.85);backdrop-filter:saturate(160%) blur(6px);border-bottom:1px solid #1f2330}
+.header-inner{display:flex;flex-direction:column;gap:.75rem}
+h1{font-size: clamp(1.6rem, 1.1rem + 2.2vw, 2.6rem); margin: .25rem 0}
+.topnav{display:flex;flex-wrap:wrap;gap:.5rem}
+.topnav a{padding:.4rem .75rem;border:1px solid #2a3042;border-radius:999px;color:var(--text)}
+.topnav a:hover{background:#1a1f2e}
+.card{background:var(--card);border:1px solid #22283a;border-radius:16px;padding:1.25rem;margin:1rem 0;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+.card h2{margin-top:0}
+.benefits{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:.75rem;padding-left:1.25rem}
+.columns{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+.timeline{counter-reset: step;list-style:none;padding-left:0;margin-left:0}
+.timeline li{position:relative;padding:.75rem .75rem .75rem 2.5rem;border-left:2px dashed #2c3246;margin:.5rem 0}
+.timeline li::before{counter-increment: step;content: counter(step);position:absolute;left:-.9rem;top:.6rem;background:var(--brand);color:#0c1222;width:1.6rem;height:1.6rem;border-radius:999px;display:grid;place-items:center;font-weight:700;box-shadow:0 0 0 4px #0c1222}
+.fecha{display:inline-block;font-variant-numeric:tabular-nums;color:var(--muted);min-width:6.5ch}
+figure{margin:0 0 1rem 0}
+figure img{width:100%;height:auto;border-radius:12px;border:1px solid #28304a;display:block}
+figcaption{font-size:.9rem;color:var(--muted);margin-top:.4rem}
+.fuente,.nota{color:var(--muted);font-size:.95rem}
+.refs{padding-left:1.25rem}
+.site-footer{text-align:center;color:var(--muted);padding:2rem 0}
+@media (prefers-color-scheme: light){
+  :root{--bg:#f7f9ff;--card:#ffffff;--text:#0b1020;--muted:#5b6275;--brand:#2b59ff;--accent:#0b5ed7}
+  .site-header{background:rgba(255,255,255,.85);border-bottom:1px solid #e5e8f3}
+  .card{border:1px solid #e9ecf6;box-shadow:0 10px 24px rgba(0,0,0,.06)}
+  .topnav a{border-color:#e6eaf6}
+  .timeline li::before{box-shadow:0 0 0 4px #fff}
+}
